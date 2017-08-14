@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<select v-model='selected' multiple style="width:50px">
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+			<option>D</option>
+			<option>E</option>
+		</select>
+		<span>selected:{{selected}}</span>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				selected:[]
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>	
+</head>
+<body>
+	<div id="app">
+		<transition 
+			v-on:before-enter="beforeEnter"
+			v-on:enter="enter"
+			v-on:after-enter="afterEnter"
+			v-on:enter-cancelled="enterCancelled"
+
+			v-on:before-leave="beforeLeave"
+			v-on:leave="leave"
+			v-on:after-leave="afterLeave"
+			v-on:leave-cancelled="leaveCancelled"></transition>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+
+			},
+			methods:{
+				// --------
+				  // 进入中
+				  // --------
+				beforeEnter:function(el){
+					// 进入之前
+				},
+				enter:function(el,done){
+					done()
+					// 进入时
+				},
+				afterEnter:function(el){
+					// 进入之后
+				},
+				enterCancelled:function(el){
+					// 取消进入
+				},
+				beforeLeave:function(el){
+					// 离开之前
+				},
+				leave:function(el,done){
+					done()
+					// 离开时
+				},
+				afterLeave:function(el){
+					// 离开之后
+				},
+				leaveCancelled:function(el){
+					// 取消离开时
+				}
+			}
+		})
+	</script>
+</body>
+</html>

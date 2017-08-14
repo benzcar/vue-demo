@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id='app'>
+		<p v-if='seen'>看到了吗</p>
+	</div>
+	<div id='app1'>
+		<p v-if='seen'>看到了吗</p>
+	</div>
+	<script>
+		var app=new Vue({
+			el:'#app',
+			data:{
+				seen:true
+			}
+		})
+		var app1=new Vue({
+			el:'#app1',
+			data:{
+				seen:false
+			}
+		})
+	</script>		
+</body>
+</html>

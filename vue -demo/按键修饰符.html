@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
+	<input v-on:keyup.13="submit">
+	<!-- 同上 -->
+	<input v-on:keyup.enter="submit">
+	<!-- 缩写语法 -->
+	<input @keyup.enter="submit">
+	<!-- 全部的按键别名：
+	.enter
+	.tab
+	.delete (捕获 “删除” 和 “退格” 键)
+	.esc
+	.space
+	.up
+	.down
+	.left
+	.right -->
+
+	<!-- 可以通过全局 config.keyCodes 对象自定义按键修饰符别名：
+	可以使用 v-on:keyup.f1
+	Vue.config.keyCodes.f1 = 112 -->
+
+	<!--开启鼠标或键盘事件监听，使在按键按下时发生响应。 
+	.ctrl
+	.alt
+	.shift
+	.meta	 -->
+</body>
+</html>

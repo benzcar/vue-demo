@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<script>
+		// Vue.config.optionMergeStrategies.myOption=function(toVal,fromVal){}
+		var strategies=Vue.config.optionMergeStrategies
+		strategies.myOption=strategies.methods
+	</script>
+</body>
+</html>

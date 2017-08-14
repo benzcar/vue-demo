@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/tween.js@16.3.4"></script>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<input v-model.number='firstNumber' type="number" step="20">+
+		<input v-model.number="secondNumber" type="number" step="20">=
+		{{result}}
+		<p>
+			<animation-integer v-bind:value="firstNumber"></animation-integer>+
+			<animation-integer v-bind:value="secondNumber"></animation-integer>=
+			<animation-integer v-bind:value="result"></animation-integer>
+		</p>
+	</div>
+	<script>
+		Vue.component('animation-integer',{
+			template:'<span>{{tweeningValue}}</span>',
+			props:{
+				value:{
+					type:Number,
+					required:true
+				}
+			},
+			data:function(){
+				return {
+					tweeningValue:0
+				}
+			},
+			watch:{
+				value:function(newValue,oldValue){
+					this.tween(oldValue,newValue)
+				}
+			},
+			mounted:function(){
+				this.tween(0,this.value)
+			},
+			methods:{
+				tween:function(startValue,endValue){
+					var vm=this
+					function animate(time){
+						requestAnimationFrame(animate)
+						TWEEN.update(time)
+					}
+					new TWEEN.Tween({tweeningValue:startValue})
+						.to({tweeningValue:endValue},500)
+						.onUpdate(function(){
+							vm.tweeningValue=this.tweeningValue.toFixed(0)
+						})
+						.start()
+						animate()
+				}
+			}
+		})
+		new Vue({
+			el:"#app",
+			data:{
+				firstNumber:20,
+				secondNumber:40
+			},
+			computed:{
+				result:function(){
+					return this.firstNumber+this.secondNumber
+				}
+			}
+		})
+	</script>
+</body>
+</html>

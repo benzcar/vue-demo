@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id='demo'>{{fullName}}</div>
+	<script>
+		var vm=new Vue({
+			el:"#demo",
+			data:{
+				firstName:'foo',
+				lastName:'bar',
+				fullName:'foo bar'
+			},
+			watch:{
+				firstName:function(val){
+					this.fullName=val+''+this.lastName
+				},
+				lastName:function(val){
+					this.fullName=this.firstName+" "+val
+				}
+			}
+		})
+
+		//computed更简洁
+		// var vm=new Vue({
+		// 	el:"#demo",
+		// 	data:{
+		// 		firstName:"foo",
+		// 		lastName:"bar"
+		// 	},
+		// 	computed:{
+		// 		fullName:function(){
+		// 			return this.firstName+" "+this.lastName
+		// 		}
+		// 	}
+		// })
+	</script>
+</body>
+</html>

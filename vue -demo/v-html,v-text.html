@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+	    <p>{{message}}</p>
+	    <!-- v-html字符串会解析成dom元素 -->
+	    <p v-html="html"></p> 
+	    <!-- 不会解析html元素 -->
+	    <p v-text="text"></p>
+
+	</div>
+	<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            message: "hello,word,<b>{{}}</b>通过双括号绑定!",
+            html: "通过<b>v-html</b>方式绑定,html标签在渲染的时候被解析了。",
+            text: "通过<b>v-text</b>方式绑定,html标签在渲染的时候被源码输出了。",
+        }
+    });
+</script>
+</body>
+</html>

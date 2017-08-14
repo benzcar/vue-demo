@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id='app'>
+		<input type="text"
+			v-model="newTodoText"
+			v-on:keyup.enter='addNewTodo'
+			placeholder="Add a todo" 
+		>
+		<ul>
+			<li
+				is='todo-item'
+				v-for="(todo,inex) in todos"
+				v-bind:title='todo'
+				v-on:remove='todos.splice(index,1)'></li>
+		</ul>
+	</div>
+	<script>
+		Vue.component('todo-item',{
+			template: '\
+		    <li>\
+		      {{ title }}\
+		      <button v-on:click="$emit(\'remove\')">X</button>\
+		    </li>\
+		  ',
+		  props:['title']
+		})
+		new Vue({
+			el:"#app",
+			data:{
+				newTodoText:'',
+				todos:[
+					'doasdasasfsafa',
+					'asdsadas',
+					'asdsadsadas'
+				]
+			},
+			methods:{
+				addNewTodo:function(){
+					this.todos.push(this.newTodoText)
+					this.newTodoText=''
+				}
+			}
+		})
+	</script>
+</body>
+</html>

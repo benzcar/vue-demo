@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<span>多行数据绑定</span>
+		<p style="white-space: pre">{{mess}}</p><br>
+		<textarea v-model="mess" placeholder="输入"></textarea>
+	</div>
+	<!-- 在文本区域插值( <textarea></textarea> ) 并不会生效，应用 v-model 来代替 -->
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				mess:12
+			}
+		})
+	</script>
+</body>
+</html>

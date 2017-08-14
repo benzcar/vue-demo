@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">{{mess}}</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				mess:'123'
+			}
+		})
+		vm.mess='new mess';//跟新数据
+		var flag=(vm.$el.textContent==='new mess')// false
+		console.log(flag);
+		Vue.nextTick(function(){
+			var ff=(vm.$el.textContent==='new mess')// true
+			console.log(ff)
+		})
+	</script>
+</body>
+</html>

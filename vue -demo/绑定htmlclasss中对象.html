@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<div v-bind:class="classObject"></div>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				classObject:{
+					active:true,
+					"text-danger":false
+				}
+			}
+		})
+	</script>
+</body>
+</html>

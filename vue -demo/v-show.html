@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id='app'>
+		<!-- false时候设置的是display：none（元素还在）只是css样式切换 -->
+		<div v-show="ok">hello!!!</div>	
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				ok:true
+			}
+		})
+	</script>
+</body>
+</html>

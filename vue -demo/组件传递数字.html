@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<child some-prop=1></child>
+	</div>
+	<script>
+		Vue.component('child',{
+			props:['someProp'],
+			template:'<p>{{someProp}}</p>'
+		})
+		new Vue({
+			el:"#app",
+			data:{}
+		})
+	</script>
+</body>
+</html>

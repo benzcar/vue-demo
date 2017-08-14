@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<div v-for="item in items">
+			{{item.message}}
+		</div>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				items:[
+					{message:'html'},
+					{message:'css'},
+					{message:'js'}
+				]
+			}
+		})
+	</script>
+</body>
+</html>

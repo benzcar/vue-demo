@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		 <!-- HTML 属性中使用v-bind -->
+		<div v-bind:id='sss'>asdas</div>
+		<!-- 对布尔值的属性也有效-->
+		<button v-bind:disabled='dis'>Button</button>
+
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				sss:12,
+				dis:true
+			}
+		})
+	</script>
+</body>
+</html>

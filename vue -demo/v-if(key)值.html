@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<template v-if='loginType==="uername"'>
+			<label for="">Username</label>
+			<input type="text" placeholder="enter your name">
+		</template>
+		<template v-else>
+			<label for="">email</label>
+			<input type="text" placeholder="enter your email address">
+		</template>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				loginType:false
+			}
+		})
+	</script>
+</body>
+</html>

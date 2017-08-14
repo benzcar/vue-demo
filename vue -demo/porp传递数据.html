@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<child message="hello!"></child>
+	</div>
+	传递数据流 message="hello!" -->Vue.component中的props的message-->Vue.component中的span{{message}}
+	<script>
+		Vue.component('child',{
+			props:['message'],
+			template:'<span>{{message}}</span>'
+		})
+		new Vue({
+			el:"#app",
+			data:{
+
+			}
+		})
+	</script>
+</body>
+</html>

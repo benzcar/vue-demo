@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 判断type等于几 -->
+		<div v-if='type==="A"'>a</div>
+		<div v-else-if='type==="B"'>b</div>
+		<div v-else-if='type==="C"'>c</div>
+		<div v-else>不是abc</div>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				type:'s'
+			}
+		})
+	</script>
+</body>
+</html>

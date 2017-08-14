@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<button v-on:click="warn('Form cannot be submitted yet',$event)">提交</button>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			methods:{
+				warn:function(mes,event){
+					console.log(event)
+					 // 现在我们可以访问原生事件对象
+					if(event)event.preventDefault()
+						alert(mes)
+				}
+			}
+		})
+	</script>
+</body>
+</html>

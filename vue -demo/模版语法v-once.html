@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id='app'>
+		<!-- //Mustache语法 -->
+		{{message}} 
+		 <!-- v-once 指令，只能执行一次性地插值，数据改变时，插值处的内容不会更新 -->
+		<div v-once>{{message}}</div>
+	</div>
+	<script>
+		mess=123;
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				message:mess
+			}
+		})
+		vm.message=12;//改变数值是，v-once的不会被响应，
+	</script>
+</body>
+</html>

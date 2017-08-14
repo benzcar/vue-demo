@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id='app'>
+		<!-- 也可以用of替代in -->
+		<div v-for="(item,index) of items">
+			{{parentMessage}}-{{index}}-{{item.message}}
+		</div>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				parentMessage:'Parent',
+				items:[
+					{message:"html"},
+					{message:"css"},
+					{message:"js"}
+				]
+			}
+		})
+	</script>
+</body>
+</html>

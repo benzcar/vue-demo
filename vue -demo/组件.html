@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<mycomponent></mycomponent>
+	</div>
+	<script>
+		// 必需先注册
+		Vue.component('mycomponent',{
+			template:'<div>组件</div>'
+		})
+		//创建根实例
+		var vm=new Vue({
+			el:"#app",
+			data:{
+
+			}
+		})
+	</script>
+</body>
+</html>

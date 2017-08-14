@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="file" id="int" value="文件">
+	<script>
+	function getOrder(num, i = 1) {
+		if (num < 1) {
+			return getOrder(num * 10, i / 10)
+		} else if (num < 10) {
+			return i
+		} else {
+			return getOrder(num / 10, i * 10)
+		}
+	}
+	console.log(getOrder(0.2,1));//0.1
+	console.log(getOrder(0.1,1));//0.1
+	console.log(getOrder(0.4,1));//0.1
+	console.log(getOrder(0.01,1));//0.01
+	console.log(getOrder(0.02,1));//0.01
+	console.log(getOrder(0.06,1));//0.01
+	console.log(getOrder(3,1));//1
+	console.log(getOrder(4,1));//1
+	console.log(getOrder(5,1));//1
+	console.log(getOrder(6,1));//1
+	console.log(getOrder(11,1));//10
+	console.log(getOrder(12,1));//10
+	console.log(getOrder(13,1));//10
+	</script>
+</body>
+</html>

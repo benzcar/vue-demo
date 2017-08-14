@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<mycomponent></mycomponent>
+	</div>
+	<script>
+		var child={
+			template:'<div>组件</div>'
+		}
+		new Vue({
+			el:"#app",
+			components:{
+				'mycomponent':child
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<button @click='great'>点击</button>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				name:'vue.js'
+			},
+			methods:{
+				great:function(event){
+					 // `this` 在方法里指当前 Vue 实例
+					alert('hello'+this.name)//hello vue.js
+					// `event` 是原生 DOM 事件
+					alert(event.target.tagName)//button(dom)
+				}
+			}
+		})
+		vm.great()//只弹hellovue.js(event事件未执行)
+	</script>
+</body>
+</html>

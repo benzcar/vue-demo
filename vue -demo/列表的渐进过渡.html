@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<input v-model="query">
+		<transition-group 
+			name="staggered-fade" 
+			tag='ul'
+			v-bind:css='false'
+			v-on:before-enter="beforeEnter"
+			v-on:enter="enter"
+			v-on:leave="leave">
+			<li 
+				v-for="(item,index) in computedList"
+				v-bind:key="item.meg"
+				v-bind:data-index="index">
+				{{item.meg}}
+				</li>
+		</transition-group>
+	</div>
+	<script>
+		new Vue({
+			el:"#app",
+			data:{
+				query:'',
+				list:[
+					{meg:"asdasdadas"},
+					{meg:"12312312312"},
+					{meg:"qweqwe"},
+					{meg:"werwerewrw"},
+					{meg:"xcvncvn"},
+				]
+			},
+			computed:{
+				computedList:function(){
+					var vm=this
+					return this.list.filter(function(item){
+						return item.meg.toLowerCase().indexOf(vm.query.toLowerCase())!==-1
+					})
+				}
+			},
+			methods:{
+				beforeEnter:function(el){
+					el.style.opacity=0
+					el.style.height=0
+				},
+				enter:function(el,done){
+					var delay=el.dataset.index*150
+					setTimeout(function(){
+						Velocity(
+							el,{opacity:1,height:'1.76em'},{complete:done}
+							)
+					},delay)
+				},
+				leave:function(el,done){
+					var delay=el.dataset.index*150
+					setTimeout(function(){
+						Velocity(el,{opacity:0,height:0},
+							{complete:done})
+					},delay)
+				}
+			}
+		})
+	</script>
+</body>
+</html>

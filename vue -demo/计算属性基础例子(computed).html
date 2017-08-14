@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>Original message:'{{message}}'</p>
+		<p>Computed reversed:'{{reversedMessage}}'</p>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				message:'hello'
+			},
+			// 计算属性是基于它们的依赖进行缓存的。
+			// 只有在它的相关依赖发生改变时才会重新求值
+			//计算的，使用计算机的;
+			computed:{
+				reversedMessage:function(){
+					return this.message.split('').reverse().join('')
+				}
+			}
+		})
+	</script>
+</body>
+</html>

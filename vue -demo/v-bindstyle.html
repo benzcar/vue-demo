@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<div v-bind:style="[baseStyle,over]">ads</div>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				baseStyle:{
+					color:'red'
+				},
+				over:{
+					'font-size':'18px'
+				}
+			}
+		})
+	</script>
+</body>
+</html>

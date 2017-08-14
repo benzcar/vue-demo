@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<script>
+		var data={a:1}
+		var vm=new Vue({
+			el:"#aa",
+			data:data
+		})
+		console.log(vm.a)
+		vm.a=3
+		console.log(data.a)
+		vm.$data === data // -> true
+		vm.$el === document.getElementById('example') // -> true
+	</script>
+</body>
+</html>

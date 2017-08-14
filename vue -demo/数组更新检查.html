@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<!-- 变异方法push()pop()shift()unshift()splice()sort()reverse() -->
+	<div id="app">
+		<ul id="example-1">
+		  <li v-for="item in items">
+		    {{ item.message }}
+		  </li>
+		</ul>
+	</div>
+	<script>
+		var example1 = new Vue({
+		  el: '#example-1',
+		  data: {
+		    items: [
+		      {message: 'Foo' },
+		      {message: 'Bar' }
+		    ]
+		  }
+		})
+		// 调用此方法后会自动渲染数据（变异方法）
+		// example1.items.pop({ message: 'Baz' })
+
+		//非变异方法，会返回一个新数组，（用于新数组替换旧数组）控制台输出看看
+		// example1.items = example1.items.filter(function (item){
+		//   return item.message.match(/Foo/)
+		// })
+	</script>
+</body>
+</html>

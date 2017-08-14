@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<button @click='count+=1'>加1</button>
+		<p>按钮被点击了{{count}}次</p>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				count:0
+			}
+		})
+	</script>
+</body>
+</html>

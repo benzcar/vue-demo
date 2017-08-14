@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 1 从这传 parent -->
+		<input type="text" v-model='parent'>
+		<br>
+		<!-- 1传到2  parent-->
+		<child v-bind:my-message='parent'></child>
+	</div>
+	<script>
+
+		Vue.component('child',{
+			//2传到3props中的props
+			props:['myMessage'],
+			//3传到4 message
+			template:'<p>{{myMessage}}</p>'
+		})
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				parent:12
+			}
+		})
+	</script>
+</body>
+</html>

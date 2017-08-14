@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 字面量传递值 -->
+		<comp v-bind:some-prop='213'></comp>
+	</div>
+	<script>
+		Vue.component('comp',{
+			props:['someProp'],
+			template:"<a>{{someProp}}</a>"
+		})
+		var vm=new Vue({
+			el:"#app",
+			data:{}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='js/vue.js'></script>
+</head>
+<body>
+	<ul id='app'>
+		<todo-item></todo-item>
+		<todo-item></todo-item>
+		<todo-item></todo-item>
+	</ul>
+	<script>
+		// 先定义组件
+		Vue.component('todo-item',{
+			template:'<li>sdad</li>'
+		})
+		// 实例化
+		var app=new Vue({
+			el:'#app'
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/vue.js"></script>
+</head>
+<body>
+	<div id='demo'>{{fullName}}</div>
+	<script>
+		var vm=new Vue({
+			el:"#demo",
+			data:{
+				firstName:"foo",
+				lastName:"bar"
+			},
+			computed:{
+				fullName:{
+					//getter
+					get:function(){
+						return this.firstName+' '+this.lastName
+					},
+					//setter
+					set:function(newValue){
+						var name=newValue.split(' ')
+						this.firstName=name[0]
+						this.lastName=name[name.length-1]
+					}
+				}
+			}
+		})
+		vm.fullName='asda'
+	</script>
+</body>
+</html>
